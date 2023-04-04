@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="logo.webp" />
+    <meta author="Asif Nihal" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Financial Statement</title>
+  </head>
+  <body>
+    <div class="__main__container__ggt">
+      <div id="alert_div" class="__alert__div hidden">
+        <div id="alert_type" class="__alert__message__div __danger__">
+          <h4 class="__ggt__h4__" id="alert_message">Alert Message</h4>
+        </div>
+      </div>
+      <div id="loading_div" class="hidden dummy">
+        <div class="spinner">
+          <div class="loader"></div>
+          <p style="font-size: x-large">Loading... Please Wait...</p>
+        </div>
+      </div>
+      <div class="__ggt__container__">
+        <div class="_header _text_green">
+          <a class="__title_and_logo_a" href="/">
+            <img class="__image__ggt__logo" alt="Nihal" />
+            <span class="__title__nihal">sif <span>Nihal </span></span>
+          </a>
+          <div class="__text__center">
+            <h2 class="__ggt__h2__">
+              Your
+              <span style="color: rgba(76, 178, 98, 1)">
+                Financial Statement
+              </span>
+            </h2>
+          </div>
+        </div>
+        <div class="__name__date__currency">
+          <input
+            id="name"
+            name="name"
+            class="top__input__name"
+            placeholder="Name :"
+            type="text"
+          />
+          <div>
+            <div id="dropdown__container" class="_dropdown_menu_container">
+              <div>
+                <input id="date" name="date" class="__select__1" type="month" />
+              </div>
+              <div>
+                <select id="currency" class="__select__2" aria-label="">
+                  <option id="option_default" selected value="$">
+                    Dollar ($)
+                  </option>
+                  <option value="£">Pound ( £ )</option>
+                  <option value="€">Euro ( € )</option>
+                  <option value="₹">Indian Rupee ( ₹ )</option>
+                </select>
+              </div>
+              <button class="__annual__btn" id="annual_summary">
+                Annual Summary
+              </button>
+            </div>
+
+            <div
+              id="annual__hidden__con"
+              style="justify-content: center"
+              class="_dropdown_menu_container __text__center hidden"
+            >
+              <h2 class="__ggt__h2__">
+                Annual Summary of
+                <span
+                  style="color: rgba(76, 178, 98, 1)"
+                  id="name__hidden__span"
+                >
+                  Asif Nihal</span
+                >
+              </h2>
+              <button class="hidden__go__back__btn" id="annual_summary">
+                Go Back
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="__calc__meter__div">
+          <div class="calc__meter__items">
+            <h4 class="__ggt__h4__" style="font-weight: 600">
+              <span id="annual_hero_text">Monthly</span> Cash Flow
+            </h4>
+            <span class="__small__text _text_green"
+              >Total Income - Total Expenses</span
+            >
+            <h2 class="__ggt__h2__" style="margin-top: 48px">
+              <span id="money_symbol">$</span>
+              <span id="cash_flow"> 0.00 </span>
+            </h2>
+          </div>
+          <div class="calc__meter__items">
+            <h4 class="__ggt__h4__" style="font-weight: 600">Passive Income</h4>
+            <span class="__small__text _text_green"
+              >Cash Flow From Investment</span
+            >
+            <h2 class="__ggt__h2__" style="margin-top: 48px">
+              <span id="money_symbol">$</span>
+              <span id="passive_income"> 0.00 </span>
+            </h2>
+          </div>
+          <div class="calc__meter__items">
+            <h4 class="__ggt__h4__" style="font-weight: 600">Debt To Income</h4>
+            <span class="__small__text _text_green" style="width: 250px"
+              >Total Debt divided by Total Income (no more than 36%)</span
+            >
+            <h2 class="__ggt__h2__" style="margin-top: 28px">
+              <span>%</span> <span id="debt_to_income"> 0.00 </span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- income div starts here  -->
+        <div class="__input__label__con __income__margin__top">
+          <div class="__input__label__each__container __first__margin__top">
+            <div class="__equal__dis">
+              <h2 class="_text_green __ggt__h2__">Income</h2>
+            </div>
+            <div class="__equal__dis">
+              <h2 class="_text_green small__width__adjust __ggt__h2__">
+                <span id="annual_hero_text1">Monthly</span> Amount
+              </h2>
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Salary / Take Home Pay (NET)</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                id="salary"
+                name="salary"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00 "
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Interest / Dividend</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                id="interest"
+                name="interest"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Net Rental Income</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="rental_income"
+                id="rental_income"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Net Business Income</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                id="business_income"
+                name="business_income"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container __last__margin__bottom">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="salary"
+                ><span class="_text_green">Total</span></label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="total_income"
+                type="number"
+                disabled
+                id="total_income"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- income div ends here  -->
+
+        <!-- expenses div starts here  -->
+
+        <div id="expenses" class="__input__label__con __income__margin__top">
+          <div class="__input__label__each__container __first__margin__top">
+            <div class="__equal__dis">
+              <h2 class="_text_orange __ggt__h2__">Expenses</h2>
+            </div>
+            <div class="__equal__dis">
+              <h2 class="_text_orange small__width__adjust __ggt__h2__">
+                <span id="annual_hero_text2">Monthly</span> Amount
+              </h2>
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="health_insurance"
+                >Health Insurance</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                type="number"
+                id="health_insurance"
+                name="health_insurance"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="mortgage_rent"
+                >Home Mortgage Payment or Rent</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="mortgage_rent"
+                type="number"
+                id="mortgage_rent"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="student_loan"
+                >Student Loan Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="student_loan"
+                type="number"
+                id="student_loan"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="car_loan"
+                >Car Loan Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="car_loan"
+                type="number"
+                id="car_loan"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="car_insurance"
+                >Car Insurance</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="car_insurance"
+                id="car_insurance"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="credit_card_pay"
+                >Credit Card Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="credit_card_pay"
+                id="credit_card_pay"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="phone_bill"
+                >Cell Phone Bill Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="phone_bill"
+                id="phone_bill"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="internet_pay"
+                >Cable/Internet Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="internet_pay"
+                id="internet_pay"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="grocery">Grocery</label>
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="grocery"
+                id="grocery"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="water_bill"
+                >Water Bill Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="water_bill"
+                id="water_bill"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="fast_food"
+                >Fast Food/Restaurant Total For The Month</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="fast_food"
+                id="fast_food"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="electric_bill"
+                >Electric Bill Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="electric_bill"
+                id="electric_bill"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="charity"
+                >Charity / Donations</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="charity"
+                id="charity"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="retail_pay"
+                >Retail Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="retail_pay"
+                id="retail_pay"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="loan_pay"
+                >Loan Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="loan_pay"
+                id="loan_pay"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="child_support"
+                >Child Support Payment</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="child_support"
+                type="number"
+                id="child_support"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_1" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new expense :"
+                name="custom_expense_1"
+                id="custom_expense_1"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_expense1_value"
+                type="number"
+                id="custom_expense1_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_2" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new expense :"
+                name="custom_expense_2"
+                id="custom_expense_2"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_expense2_value"
+                type="number"
+                id="custom_expense2_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_3" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new expense :"
+                name="custom_expense_3"
+                id="custom_expense_3"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_expense3_value"
+                type="number"
+                id="custom_expense3_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_4" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new expense :"
+                name="custom_expense_4"
+                id="custom_expense_4"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_expense4_value"
+                type="number"
+                id="custom_expense4_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+
+          <!-- //! + div  -->
+          <div class="__input__label__each__container" id="add_new_expense">
+            <div class="__equal__dis">
+              <div class="__rounded__plus">
+                <label class="__small__input__label"
+                  ><span class="__plus__span"> + </span></label
+                >
+              </div>
+            </div>
+            <!-- <div class="__equal__dis">
+                        <input name="expenses_plus" id="expenses_plus" type="number" class="__small__input__field" placeholder="0.00" />
+                    </div> -->
+          </div>
+
+          <div class="__input__label__each__container __last__margin__bottom">
+            <div class="__equal__dis">
+              <label
+                class="__small__input__label _text_green"
+                for="total_expenses"
+                ><span class="_text_green"> Total </span></label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="total_expenses"
+                disabled
+                id="total_expenses"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!--//! expenses div ends here  -->
+
+        <!-- assets div ends here  -->
+
+        <div class="__input__label__con __income__margin__top">
+          <div class="__input__label__each__container __first__margin__top">
+            <div class="__equal__dis">
+              <h2 class="_text_green __ggt__h2__">Assets</h2>
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="savings">Saving</label>
+            </div>
+            <div class="__3__equal__dis"></div>
+            <div class="__3__equal__dis">
+              <input
+                name="savings"
+                id="savings"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Stocks / Bonds / CD's</label
+              >
+            </div>
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="salary"
+                ># Of Shares:</label
+              >
+            </div>
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="salary"
+                >Cost/Share</label
+              >
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type here :"
+                name="custom_stock_name1"
+                id="custom_stock_name1"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_stock_amount_1"
+                type="number"
+                id="custom_stock_amount_1"
+                class="__small__input__field"
+                placeholder="0"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="stocks1"
+                id="stocks1"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type here :"
+                name="custom_stock_name2"
+                id="custom_stock_name2"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_stock_amount_2"
+                type="number"
+                id="custom_stock_amount_2"
+                class="__small__input__field"
+                placeholder="0"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="stocks2"
+                id="stocks2"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type here :"
+                name="custom_stock_name3"
+                id="custom_stock_name3"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_stock_amount_3"
+                type="number"
+                id="custom_stock_amount_3"
+                class="__small__input__field"
+                placeholder="0"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="stocks3"
+                id="stocks3"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+
+          <div style="margin-top: 32px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="business1"
+                >Real Estate / Business</label
+              >
+            </div>
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="business1"
+                >Down Pay</label
+              >
+            </div>
+            <div class="__3__equal__dis">
+              <label class="__small__input__label" for="business1">Cost</label>
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="custom_business_name1"
+                id="custom_business_name1"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_business_downpay_1"
+                type="number"
+                id="custom_business_downpay_1"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="business1"
+                type="number"
+                id="business1"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="custom_business_name2"
+                id="custom_business_name2"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_business_downpay_2"
+                type="number"
+                id="custom_business_downpay_2"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="business2"
+                id="business2"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div style="margin-top: 16px" class="__input__label__each__container">
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="custom_business_name3"
+                id="custom_business_name3"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_business_downpay_3"
+                type="number"
+                id="custom_business_downpay_3"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="business3"
+                id="business3"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div
+            style="margin-top: 16px"
+            class="__input__label__each__container __last__margin__bottom"
+          >
+            <div class="__3__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="custom_business_name4"
+                id="custom_business_name4"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="custom_business_downpay_4"
+                type="number"
+                id="custom_business_downpay_4"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+            <div class="__3__equal__dis">
+              <input
+                name="business4"
+                id="business4"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- assets div ends here  -->
+
+        <!-- liabilities div starts here  -->
+
+        <div class="__input__label__con __income__margin__top">
+          <div class="__input__label__each__container __first__margin__top">
+            <div class="__equal__dis">
+              <h2 class="_text_orange __ggt__h2__">Liabilities</h2>
+            </div>
+            <div class="__equal__dis">
+              <h2 class="_text_orange small__width__adjust __ggt__h2__">
+                Amount
+              </h2>
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="home_mortgage"
+                >Home Mortgage:</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="home_mortgage"
+                id="home_mortgage"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="school_loans"
+                >School Loans:</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="school_loans"
+                id="school_loans"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="car_loans"
+                >Car Loans:</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="car_loans"
+                id="car_loans"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="credit_card"
+                >Credit Cards:</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="credit_card"
+                id="credit_card"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <label class="__small__input__label" for="retail_debt"
+                >Retail Debt:</label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="retail_debt"
+                id="retail_debt"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_5" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new liabilities :"
+                name="custom_liabilities_1"
+                id="custom_liabilities_1"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_liabilities_1_value"
+                type="number"
+                id="custom_liabilities_1_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_6" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new liabilities :"
+                name="custom_liabilities_2"
+                id="custom_liabilities_2"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_liabilities_2_value"
+                type="number"
+                id="custom_liabilities_2_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_7" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new liabilities :"
+                name="custom_liabilities_3"
+                id="custom_liabilities_3"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_liabilities_3_value"
+                type="number"
+                id="custom_liabilities_3_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="custom_box_8" class="__input__label__each__container hidden">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="insert a new liabilities :"
+                name="custom_liabilities_4"
+                id="custom_liabilities_4"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="custom_liabilities_4_value"
+                type="number"
+                id="custom_liabilities_4_value"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div id="add_new_liabilities" class="__input__label__each__container">
+            <div class="__equal__dis">
+              <div class="__rounded__plus">
+                <label class="__small__input__label"
+                  ><span class="__plus__span"> + </span></label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="__input__label__each__container __first__margin__top">
+            <div class="">
+              <h2 class="_text_orange __ggt__h2__">
+                Real Estate / Business Mortgage / Liability
+              </h2>
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="liabilities_name_1"
+                id="liabilities_name_1"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="liabilities1"
+                type="number"
+                id="liabilities1"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="liabilities_name_2"
+                id="liabilities_name_2"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="liabilities2"
+                id="liabilities2"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="liabilities_name_3"
+                id="liabilities_name_3"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="liabilities3"
+                id="liabilities3"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+          <div class="__input__label__each__container">
+            <div class="__equal__dis">
+              <input
+                class="__custom__input__box"
+                placeholder="type the name :"
+                name="liabilities_name_4"
+                id="liabilities_name_4"
+              />
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="liabilities4"
+                id="liabilities4"
+                type="number"
+                class="__small__input__field"
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+
+          <div class="__input__label__each__container __last__margin__bottom">
+            <div class="__equal__dis">
+              <label
+                class="__small__input__label _text_green"
+                for="total_liabilities"
+                ><span class="_text_orange"> Total </span></label
+              >
+            </div>
+            <div class="__equal__dis">
+              <input
+                name="total_liabilities"
+                id="total_liabilities"
+                type="number"
+                class="__small__input__field"
+                disabled
+                placeholder="0.00"
+              />
+            </div>
+          </div>
+
+          <button id="submit_button" class="__submit__button">Submit</button>
+        </div>
+        <!-- liabilities div ends here  -->
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
