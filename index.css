@@ -46,9 +46,9 @@ img {
 }
 
 .__main__container__ggt {
-  background: #ffffff !important;
-  /* font-family: 'ClashGrotesk' !important; */
-  font-weight: 600 !important;
+  background: #ffffff;
+  /* font-family: 'ClashGrotesk' ; */
+  font-weight: 600;
 }
 
 .__ggt__h2__ {
@@ -56,7 +56,7 @@ img {
   line-height: 39.36px;
   font-weight: 600;
   margin: 0px 0px;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
 }
 
 .__ggt__h4__ {
@@ -64,25 +64,25 @@ img {
   line-height: 29.52px;
   font-weight: 600;
   margin: 0px 0px;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
 }
 
 /*! loading  component */
 .spinner {
-  position: fixed !important;
-  left: 50% !important;
-  transform: translate(-50%, 0) !important;
-  z-index: 999 !important;
-  height: 100vh !important;
-  width: 100vw !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: black;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-  backdrop-filter: blur(1px) !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  backdrop-filter: blur(1px);
   /* background-color: #191919; */
 }
 
@@ -106,10 +106,10 @@ img {
 }
 
 .__alert__div {
-  position: fixed !important;
-  left: 50% !important;
-  transform: translate(-50%, 0) !important;
-  z-index: 999 !important;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 999;
 }
 .__alert__message__div {
   display: flex;
@@ -124,8 +124,8 @@ img {
   color: white;
 }
 .__safe__ {
-  background-color: #4cb262 !important;
-  color: white !important;
+  background-color: #4cb262;
+  color: white;
 }
 
 .hidden {
@@ -133,16 +133,16 @@ img {
 }
 
 .__custom__input__box {
-  width: 250px !important;
-  height: 48px !important;
-  background: #ffffff !important;
-  border: 0px !important;
-  border-radius: 10px !important;
-  font-weight: 500 !important;
-  font-size: 24px !important;
-  line-height: 30px !important;
-  color: #191919 !important;
-  color-scheme: dark !important;
+  width: 250px;
+  height: 48px;
+  background: #ffffff;
+  border: 0px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #191919;
+  color-scheme: dark;
 }
 
 .__small__text {
@@ -166,11 +166,11 @@ img {
   padding-bottom: 48px;
 }
 ._text_green {
-  color: var(--color_green) !important;
+  color: var(--color_green);
 }
 
 ._text_orange {
-  color: var(--color_orange) !important;
+  color: var(--color_orange);
 }
 
 .__name__date__currency {
@@ -185,21 +185,29 @@ img {
   gap: 42px;
 }
 
+.__date_and_currency {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  gap: 42px;
+}
+
 .top__input__name {
-  width: 306px !important;
-  height: 48px !important;
-  padding-left: 20px !important;
-  font-size: 20px !important;
+  width: 306px;
+  height: 48px;
+  padding-left: 20px;
+  font-size: 20px;
   font-weight: 600;
-  color: var(--color_ash) !important;
-  background: #f7f7f7 !important;
-  border: 1px solid #191919 !important;
-  border-radius: 10px !important;
-  color-scheme: dark !important;
+  color: var(--color_ash);
+  background: #f7f7f7;
+  border: 1px solid #191919;
+  border-radius: 10px;
+  color-scheme: dark;
 }
 
 .__select__1 {
   display: flex;
+  height: 52px;
   justify-items: center;
   background-color: var(--color_black);
   padding: 16px;
@@ -297,20 +305,20 @@ img {
   color: #191919;
 }
 .__small__input__field {
-  display: flex !important;
-  justify-items: center !important;
-  align-items: center !important;
-  width: 103px !important;
-  height: 48px !important;
-  background: #f7f7f7 !important;
-  color: #979797 !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  padding: 14px 24px !important;
-  border: 0px !important;
-  color-scheme: dark !important;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 103px;
+  height: 48px;
+  background: #f7f7f7;
+  color: #979797;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 14px 24px;
+  border: 0px;
+  color-scheme: dark;
 }
 .__income__margin__top {
   margin-top: 80px;
@@ -358,17 +366,17 @@ img {
 }
 
 input[type='number']:disabled {
-  background: #f7f7f7 !important;
-  color: #979797 !important;
+  background: #f7f7f7;
+  color: #979797;
 }
 
 button:disabled {
-  cursor: none !important;
-  opacity: 0.5 !important;
+  cursor: none;
+  opacity: 0.5;
 }
 
 select {
-  appearance: none !important;
+  appearance: none;
   /* background: url(../../ggt-user-details-form-plugin/vendor//includes//template/Vector\ 10.svg)
     no-repeat right white; */
   background: url(https://frameofmindco.com/wp-content/uploads/2023/01/Vector-10.svg)
@@ -378,16 +386,32 @@ select {
 }
 
 select:focus {
-  background-color: var(--color_green) !important;
+  background-color: var(--color_green);
 }
 
 /* ?!----------------------------------------------------------------------------------------------------------------- */
 
 /* ! mobile version  */
 
-@media all and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+  .__alert__div {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+  }
+  .__alert__message__div {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 12px !important;
+    border-radius: 8px;
+  }
+
   select {
-    background-position: right 0.2rem center !important;
+    background-position: right 0.2rem center;
   }
 
   .__text__center {
@@ -400,13 +424,23 @@ select:focus {
     height: 48px;
   }
   .__ggt__h2__ {
-    font-weight: 600 !important;
-    font-size: 20px !important;
-    line-height: 25px !important;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
     /* identical to box height */
 
-    letter-spacing: -0.025em !important;
+    letter-spacing: -0.025em;
   }
+
+  .__title__nihal {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 25px;
+    /* identical to box height */
+
+    letter-spacing: -0.025em;
+  }
+
   .__ggt__h4__ {
     font-size: 16px;
     line-height: 19.68px;
@@ -423,24 +457,36 @@ select:focus {
   }
 
   .__name__date__currency {
+    width: 100%;
     margin-top: 32px;
     flex-direction: column;
   }
   .top__input__name {
-    margin-bottom: 24px !important;
-    width: 348px !important;
-    height: 48px !important;
-    background: #f7f7f7 !important;
-    border: 1px solid #191919 !important;
-    border-radius: 10px !important;
+    max-width: 487px;
+    width: 100%;
+    margin-bottom: 24px;
+    height: 40px;
+    font-size: 18px;
+    background: #f7f7f7;
+    border: 1px solid #191919;
+    border-radius: 10px;
   }
   ._dropdown_menu_container {
-    width: 348px;
-    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .__date_and_currency {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    gap: 0px;
   }
   .__annual__btn {
-    margin-left: 27%;
     padding: 12px;
     width: 155px;
     height: 39px;
@@ -495,12 +541,12 @@ select:focus {
     line-height: 20px;
   }
   .__small__input__field {
-    padding: 16px 12px !important;
-    width: 95px !important;
-    height: 52px !important;
-    font-size: 16px !important;
-    line-height: 20px !important;
-    border: 0px !important;
+    padding: 16px 12px;
+    width: 95px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 20px;
+    border: 0px;
   }
   .small__width__adjust {
     width: 175px;
@@ -528,15 +574,15 @@ select:focus {
 
   .__custom__input__box {
     max-width: 150px;
-    height: 48px !important;
-    background: #ffffff !important;
-    border: 0px !important;
-    border-radius: 10px !important;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    line-height: 20px !important;
-    color: #191919 !important;
-    color-scheme: dark !important;
+    height: 48px;
+    background: #ffffff;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #191919;
+    color-scheme: dark;
   }
   .__rounded__plus {
     display: flex;
@@ -549,4 +595,7 @@ select:focus {
     background: #4cb262;
     cursor: pointer;
   }
+}
+
+@media screen and (max-width: 900px) {
 }
