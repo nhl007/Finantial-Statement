@@ -1,5 +1,4 @@
 const currencyChange = document.querySelector('#currency');
-// const optionDefault = document.querySelector('#option_default');
 const money_symbol = document.querySelectorAll('#money_symbol');
 const submit_button = document.querySelector('#submit_button');
 const cash_flow = document.querySelector('#cash_flow');
@@ -121,7 +120,6 @@ const values = {
 
 currencyChange.addEventListener('click', function (e) {
   e.preventDefault();
-  //   optionDefault.textContent = 'Dollar ( $ ) ';
   values.currency = e.target.value;
   money_symbol[0].textContent = e.target.value;
   money_symbol[1].textContent = e.target.value;
@@ -443,6 +441,7 @@ submit_button.addEventListener('click', async function (event) {
 //! handle data update of inputs
 
 const handleUpdate = (data) => {
+  currencyChange.value = data.currency;
   money_symbol[0].textContent = data.currency;
   money_symbol[1].textContent = data.currency;
 
@@ -487,17 +486,18 @@ const handleUpdate = (data) => {
   debt_to_income.textContent = debt__to__income.toFixed(2);
 
   for (const [key, value] of Object.entries(data)) {
-    // console.log(key.trim(), ':', value);
-
     if (key === 'name' || key === 'date') {
-      continue;
     } else {
+      //? sets the previous value to the dom
       const selectedElement = document.querySelector(`#${key.trim()}`);
-      // selectedElement.disabled = true
       selectedElement.value = value;
-      let searchkey = key.trim();
-      values[searchkey] = value[0];
-      // console.log(searchkey, value[0])
+
+      // selectedElement.disabled = true
+
+      //? sets the previous value to the object
+
+      let searchKey = key.trim();
+      values[searchKey] = value;
     }
   }
 };
@@ -517,7 +517,8 @@ const fetchPrevData = async (thisMonth) => {
   //   })
   //     .then((response) => response.json())
   //     .then((data) => {
-  console.log(values.name + values.date);
+
+  // console.log(values.name + values.date);
   const data = localStorage.getItem(values.name + values.date);
 
   if (data) {
@@ -534,15 +535,15 @@ const fetchPrevData = async (thisMonth) => {
   // }
   else {
     const allElement = document.querySelectorAll('input');
-    cash_flow.textContent = null;
-    passive_income.textContent = null;
-    debt_to_income.textContent = null;
+    cash_flow.textContent = 0;
+    passive_income.textContent = 0;
+    debt_to_income.textContent = 0;
 
     // Object.keys(values).forEach(function(index) {
     //     values[index] = null
     // });
     for (const [key, value] of Object.entries(values)) {
-      // console.log(key.trim(), ':', value);
+      console.log(key.trim(), ':', value);
       // selectedElement.disabled = true
       if (key === 'name' || key === 'date' || key === 'currency') {
         continue;
@@ -552,10 +553,13 @@ const fetchPrevData = async (thisMonth) => {
     }
 
     allElement.forEach((element) => {
-      if (element.name === 'date' || element.name === 'name') {
-        console.log(' ');
+      if (
+        element.name === 'date' ||
+        element.name === 'name' ||
+        element.name === 'currency'
+      ) {
       } else {
-        element.value = '';
+        element.value = 0;
       }
     });
 
